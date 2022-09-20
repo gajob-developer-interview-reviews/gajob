@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+
+    <link href="main.css" th:href="@{/css/main.css}" rel="stylesheet" />
+
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="logo font font-32">GO NKLCD</div>
+                <div class="menu"><i data-feather="menu"></i></div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="explain">
+                <div class="font-22">가자 네카라쿠배</div>
+                <div class="font-20">원하는 회사에 취업하자는 의미를 담았습니다.</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 아이콘 적용 -->
+    <script>
+        feather.replace()
+    </script>
+</body>
+</html>

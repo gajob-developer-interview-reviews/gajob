@@ -1,0 +1,20 @@
+@media screen and (max-width: 1020px){
+    .container { width: 100%; }
+}
+
+.container { width: 1000px; margin: 0 auto; display: flex; }
+.row { display: flex; flex: 0 100%; justify-content: space-between; margin: 1.25rem; }
+
+.font { font-family: Inter; font-style: normal; line-height: 0.625em; }
+.font-32 { font-size: 2em; font-weight: 600; }
+.font-30 { font-size: 1.875em; font-weight: 400; }
+.font-26 { font-size: 1.625em; font-weight: 400; }
+.font-22 { font-size: 1.375em; font-weight: 400; }
+.font-20 { font-size: 1.25em; font-weight: 400; }
+.font-18 { font-size: 1.125em; font-weight: 400; }
+
+#header { height: 100px; display: flex; }
+#header .logo { color: #277BC0; }
+#header .menu svg { width: 1.5em; height: 1.5em; }
+
+.explain { display: flex; flex: 0 100%; flex-direction: column; margin: 1.25rem; }
