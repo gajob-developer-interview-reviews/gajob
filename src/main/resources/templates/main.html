@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" charset="UTF-8" >
     <title>Main</title>
 
     <link href="main.css" th:href="@{/css/common.css}" rel="stylesheet" />
@@ -10,45 +10,86 @@
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
-    <header id="header">
-        <div class="container">
-            <div class="row">
-                <div class="logo font font-20">GO NKLCD</div>
-                <div class="menu"><i data-feather="menu"></i></div>
+<header id="header">
+    <div class="container">
+        <div class="row">
+            <div class="logo font font-26">GO NKLCD</div>
+            <div class="menu"><i data-feather="menu"></i></div>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div class="explain mg-t-20">
+            <div class="font-16 mg-b-5">가자 네카라쿠배</div>
+            <div class="font-12">원하는 회사에 취업하자는 의미를 담았습니다.</div>
+        </div>
+        <div class="search-form mg-t-20">
+            <div class="font-18">회사 검색</div>
+            <form class="search-box">
+                <input type="text" name="keyword" placeholder="예: 네카라쿠배"/>
+            </form>
+        </div>
+        <div class="search-list mg-t-20">
+            <div class="item">
+                <div class="item-name font-16">네카라쿠배</div>
+                <div class="item-addr font-12"><i data-feather="map-pin"></i> 서울특별시 용산구</div>
+            </div>
+            <div class="line"></div>
+            <div class="item">
+                <div class="item-name font-16">네카라쿠배</div>
+                <div class="item-addr font-12"><i data-feather="map-pin"></i> 서울특별시 용산구</div>
+            </div>
+            <!-- ------------------------- -->
+            <div class="line"></div>
+            <div class="item">
+                <div class="item-name font-16">네카라쿠배</div>
+                <div class="item-addr font-12"><i data-feather="map-pin"></i> 서울특별시 용산구</div>
+            </div>
+            <div class="line"></div>
+            <div class="item">
+                <div class="item-name font-16">네카라쿠배</div>
+                <div class="item-addr font-12"><i data-feather="map-pin"></i> 서울특별시 용산구</div>
+            </div>
+            <div class="line"></div>
+            <div class="item">
+                <div class="item-name font-16">네카라쿠배</div>
+                <div class="item-addr font-12"><i data-feather="map-pin"></i> 서울특별시 용산구</div>
+            </div>
+            <div class="line"></div>
+            <div class="item">
+                <div class="item-name font-16">네카라쿠배</div>
+                <div class="item-addr font-12"><i data-feather="map-pin"></i> 서울특별시 용산구</div>
+            </div>
+            <div class="line"></div>
+            <div class="item">
+                <div class="item-name font-16">네카라쿠배</div>
+                <div class="item-addr font-12"><i data-feather="map-pin"></i> 서울특별시 용산구</div>
+            </div>
+            <div class="line"></div>
+            <div class="item">
+                <div class="item-name font-16">네카라쿠배</div>
+                <div class="item-addr font-12"><i data-feather="map-pin"></i> 서울특별시 용산구</div>
+            </div>
+            <div class="line"></div>
+            <div class="item">
+                <div class="item-name font-16">네카라쿠배</div>
+                <div class="item-addr font-12"><i data-feather="map-pin"></i> 서울특별시 용산구</div>
+            </div>
+            <div class="line"></div>
+            <div class="item">
+                <div class="item-name font-16">네카라쿠배</div>
+                <div class="item-addr font-12"><i data-feather="map-pin"></i> 서울특별시 용산구</div>
             </div>
         </div>
-    </header>
-    <main>
-        <div class="container">
-            <div class="explain mg-t-20">
-                <div class="font-14 mg-b-5">가자 네카라쿠배</div>
-                <div class="font-12">원하는 회사에 취업하자는 의미를 담았습니다.</div>
-            </div>
-            <div class="search-form mg-t-20">
-                <div class="font-16 mg-t-5">회사 검색</div>
-                <form class="search-box">
-                    <input type="text" name="keyword" placeholder="예: 네카라쿠배"/>
-                </form>
-            </div>
-            <div class="search-list mg-t-20">
-                <div class="item">
-                    <div class="item-name">네카쿠라배</div>
-                    <div class="item-addr"><i data-feather="map-pin"></i> 서울특별시 용산구</div>
-                </div>
-                <div class="line"></div>
-                <div class="item">
-                    <div class="item-name">네카쿠라배</div>
-                    <div class="item-addr"><i data-feather="map-pin"></i> 서울특별시 용산구</div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <div class="footer"><span>2022. @yewo2nn16</span></div>
-    </footer>
-    <!-- 아이콘 적용 -->
-    <script>
-        feather.replace()
-    </script>
+    </div>
+</main>
+<footer>
+    <div class="footer"><i data-feather="mail"></i></div>
+</footer>
+<!-- 아이콘 적용 -->
+<script>
+    feather.replace()
+</script>
 </body>
 </html>

@@ -2,34 +2,32 @@ header, main { margin: 0 1.25rem; }
 
 .row { display: flex; flex: 0 100%; justify-content: space-between; margin-top: 1.25rem; }
 
-#header { height: 2.5rem; display: flex; }
+#header { display: flex; }
 #header .logo { color: #277BC0; font-weight: 600; margin-top: 5px; }
 #header .menu svg { width: 24px; height: 24px; }
 
-main { display: flex; }
+main { display: flex; padding-bottom: 80px; }
 .explain { display: flex; flex: 0 100%; flex-direction: column; }
 
 .search-form { display: flex; flex: 0 100%; justify-content: space-between; }
-.search-form .search-box input[name=keyword]{ width: 190px; height: 20px; background: #FAFAFA; border: 0.5px solid #277BC0; border-radius: 20px; }
-.search-form .search-box input[name=keyword i] { font-size: 8px; padding: 0 10px; }
-.search-form .search-box ::placeholder { font-size: 8px; }
+.search-form div { margin: auto 0; }
+.search-form .search-box input[name=keyword]{ width: 190px; height: 25px; background: #FAFAFA; border: 0.5px solid #277BC0; border-radius: 20px; }
+.search-form .search-box input[name=keyword i] { font-size: 12px; padding: 0 10px; }
+.search-form .search-box ::placeholder { font-size: 12px; }
 
-.search-list { min-height: 1000px; display: flex; flex: 0 100%; flex-direction: column; }
+.search-list { min-height: 500px; display: flex; flex: 0 100%; flex-direction: column; }
 .search-list .item { height: 50px; display: flex; flex: 0 100%; flex-direction: column; }
-.search-list .item .item-name { font-size: 0.875rem; font-weight: 700; padding-top: 5px; padding-bottom: 2.5px; }
+.search-list .item .item-name { font-weight: 700; padding-top: 5px; padding-bottom: 2.5px; }
 .search-list .item .item-addr svg { width: 11px; height: 11px; }
-.search-list .item .item-addr { font-size: 0.625rem; padding-top: 2.5px; padding-bottom: 5px; }
+.search-list .item .item-addr { padding-top: 2.5px; padding-bottom: 5px; }
 .search-list .line { height: 0.5px; background: #FFB200; margin: 10px 0; }
 
-.footer { margin-top: 20px; height: 30px; background: #E6E6E6; text-align: center; }
-.footer span { font-size: 8px; color: #707070; }
-
 /*!* 화면 사이즈가 600px 이상인 경우 *!*/
-@media all and (min-width: 600px) {
+/*@media all and (min-width: 600px) {*/
 
-    .search-form .search-box input[name=keyword] { width: 350px; height: 30px; }
-    .search-list .item { height: 100px; }
-    .footer { height: 40px; }
+/*    .search-form .search-box input[name=keyword] { width: 350px; height: 30px; }*/
+/*    .search-list .item { height: 100px; }*/
+/*    .footer { height: 40px; }*/
 
-    html { font-size: 150%; }
-}
+/*    html { font-size: 150%; }*/
+/*}*/

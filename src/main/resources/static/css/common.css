@@ -1,7 +1,11 @@
 
 body { margin: 0; }
 
-.container { width: 1000px; margin: 0 auto; }
+.container { width: 540px; margin: 0 auto; padding: 0 0.5em; }
+
+/* footer */
+.footer { padding: 30px 10%; background: #E6E6E6; text-align: right; }
+.footer svg { width: 18px; height: 18px; }
 
 /* font */
 .font { font-family: Inter; font-style: normal; line-height: 0.625rem; font-weight: 400; }
