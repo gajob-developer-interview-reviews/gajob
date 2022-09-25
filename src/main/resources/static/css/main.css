@@ -11,15 +11,18 @@ main { display: flex; padding-bottom: 80px; }
 
 .search-form { display: flex; flex: 0 100%; justify-content: space-between; }
 .search-form div { margin: auto 0; }
-.search-form .search-box input[name=keyword]{ width: 190px; height: 25px; background: #FAFAFA; border: 0.5px solid #277BC0; border-radius: 20px; }
-.search-form .search-box input[name=keyword i] { font-size: 12px; padding: 0 10px; }
+.search-form .search-box { display: flex; width: 200px; height: 25px; padding: 0 14px; background: #FAFAFA; border: 0.5px solid #277BC0; border-radius: 20px; }
+/*.search-form .search-box input[name=keyword]{ width: 190px; height: 25px; background: #FAFAFA; border: 0.5px solid #277BC0; border-radius: 20px; }*/
+.search-form .search-box svg { width: 14px; height: 14px; margin: auto 0; }
+.search-form .search-box input[name=keyword] { width: 100%; margin: 0 5px; border: 0; outline: none; background-color: transparent; }
+.search-form .search-box input[name=keyword i] { font-size: 12px; }
 .search-form .search-box ::placeholder { font-size: 12px; }
 
 .search-list { min-height: 500px; display: flex; flex: 0 100%; flex-direction: column; }
-.search-list .item { height: 50px; display: flex; flex: 0 100%; flex-direction: column; }
-.search-list .item .item-name { font-weight: 700; padding-top: 5px; padding-bottom: 2.5px; }
+.search-list .item { height: 50px; display: flex; flex: 0 100%; flex-direction: column; margin: 5px 0; padding: 5px 0;}
+.search-list .item .item-name { font-weight: 700; padding-bottom: 2.5px; }
 .search-list .item .item-addr svg { width: 11px; height: 11px; }
-.search-list .item .item-addr { padding-top: 2.5px; padding-bottom: 5px; }
+.search-list .item .item-addr { padding-top: 2.5px;}
 .search-list .line { height: 0.5px; background: #FFB200; margin: 10px 0; }
 
 /*!* 화면 사이즈가 600px 이상인 경우 *!*/
