@@ -23,9 +23,9 @@ public class Company {
     private String address;
     private String logo;
 
-    private String del_yn;
+    private String delYn;
 
-    private String del_dt;
+    private String delDt;
 
     @Builder
     public Company(String cId, Company company) {
