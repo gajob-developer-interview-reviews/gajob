@@ -5,8 +5,6 @@
     <title>Login</title>
 
     <link href="main.css" th:href="@{/css/common.css}" rel="stylesheet" />
-
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
     <div class="container">
@@ -15,14 +13,7 @@
 <!--            NKLCB-->
 <!--        </div>-->
         <div class="loginBtn">
-            <div id="g_id_onload"
-                 th:data-client_id="${clientId}"
-                 data-ux_mode="redirect"
-                 data-login_uri="/">    <!-- 405 오류 발생함 -->
-            </div>
-            <div class="g_id_signin" data-type="standard" data-size="large" data-text="continue_with" data-shape="pill"></div>
-
-            <!-- https://developers.google.com/identity/gsi/web/reference/html-reference -->
+            <a th:href="@{/oauth2/authorization/google}">구글로 계속하기</a>
         </div>
     </div>
 </body>
