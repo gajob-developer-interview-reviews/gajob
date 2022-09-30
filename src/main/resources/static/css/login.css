@@ -1,0 +1,13 @@
+main { display: flex; }
+.logo { color: var(--nklcb-logo-color); font-weight: 600; margin-top: 5px; }
+
+.container .logo { text-align: center; margin-top: 200px; }
+.explain { display: flex; flex: 0 100%; flex-direction: column; text-align: center; }
+.loginBtn a img { width: 24px; height: 24px; }
+
+.loginBtn { position: relative; margin: 100px auto; width: 280px; height: 45px; border-radius: 5px; box-shadow: var(--google-login-shadow); }
+.loginBtn:hover { box-shadow: var(--google-login-hover-shadow); }
+
+.loginBtn a { position: absolute; top: 50%; transform: translateY(-50%); display: flex; text-decoration-line: none; }
+.loginBtn a img, .loginBtn a span { margin: auto 15px;}
+.loginBtn a span { color: var(--google-login); font-size: 14px; font-weight: 600; }
