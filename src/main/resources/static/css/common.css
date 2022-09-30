@@ -1,9 +1,16 @@
 :root {
     --nklcb-logo-color: #277BC0;
+    --nklcb-orange-01: #FFB200;
+    --nklcb-orange-02: #FFCB42;
+    --nklcb-orange-03: #FFF4CF;
+
+    --nklcb-search: #FAFAFA;
 
     --google-login-shadow: 0px 0px 2.41919px rgba(0, 0, 0, 0.084), 0px 2.41919px 2.41919px rgba(0, 0, 0, 0.168);
     --google-login-hover-shadow: 0px 0px 14.5152px rgba(66, 133, 244, 0.7);
     --google-login: rgba(0, 0, 0, 0.54);
+
+    --color-black: #000;
 }
 
 body { margin: 0; }

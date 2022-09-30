@@ -3,16 +3,15 @@ header, main { margin: 0 1.25rem; }
 .row { display: flex; flex: 0 100%; justify-content: space-between; margin-top: 1.25rem; }
 
 #header { display: flex; }
-#header .logo { color: #277BC0; font-weight: 600; margin-top: 5px; }
-#header .menu svg { width: 24px; height: 24px; }
+#header .logo { color: var(--nklcb-logo-color); font-weight: 600; margin-top: 5px; }
+#header .menu svg { width: 24px; height: 24px; color: var(--color-black); }
 
 main { display: flex; padding-bottom: 80px; }
 .explain { display: flex; flex: 0 100%; flex-direction: column; }
 
 .search-form { display: flex; flex: 0 100%; justify-content: space-between; }
 .search-form div { margin: auto 0; }
-.search-form .search-box { display: flex; width: 200px; height: 25px; padding: 0 14px; background: #FAFAFA; border: 0.5px solid #277BC0; border-radius: 20px; }
-/*.search-form .search-box input[name=keyword]{ width: 190px; height: 25px; background: #FAFAFA; border: 0.5px solid #277BC0; border-radius: 20px; }*/
+.search-form .search-box { display: flex; width: 200px; height: 25px; padding: 0 14px; background: var(--nklcb-search-backgournd-color); border: 0.5px solid var(--nklcb-logo-color); border-radius: 20px; }
 .search-form .search-box svg { width: 14px; height: 14px; margin: auto 0; }
 .search-form .search-box input[name=keyword] { width: 100%; margin: 0 5px; border: 0; outline: none; background-color: transparent; }
 .search-form .search-box input[name=keyword i] { font-size: 12px; }
@@ -23,7 +22,7 @@ main { display: flex; padding-bottom: 80px; }
 .search-list .item .item-name { font-weight: 700; padding-bottom: 2.5px; }
 .search-list .item .item-addr svg { width: 11px; height: 11px; }
 .search-list .item .item-addr { padding-top: 2.5px;}
-.search-list .line { height: 0.5px; background: #FFB200; margin: 10px 0; }
+.search-list .line { height: 0.5px; background: var(--nklcb-orange-01); margin: 10px 0; }
 
 /*!* 화면 사이즈가 600px 이상인 경우 *!*/
 /*@media all and (min-width: 600px) {*/
