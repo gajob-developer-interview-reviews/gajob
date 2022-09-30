@@ -5,16 +5,35 @@
     <title>Login</title>
 
     <link href="main.css" th:href="@{/css/common.css}" rel="stylesheet" />
+
+    <style>
+        main { display: flex; }
+        .logo { color: #277BC0; font-weight: 600; margin-top: 5px; }
+
+        .container .logo { text-align: center; margin-top: 200px; }
+        .explain { display: flex; flex: 0 100%; flex-direction: column; text-align: center; }
+        .loginBtn a img { width: 24px; height: 24px; }
+
+        .loginBtn { position: relative; margin: 80px auto; width: 300px; height: 45px; border-radius: 5px; box-shadow: 0px 0px 2.41919px rgba(0, 0, 0, 0.084), 0px 2.41919px 2.41919px rgba(0, 0, 0, 0.168); }
+        .loginBtn:hover { box-shadow: 0px 0px 14.5152px rgba(66, 133, 244, 0.7); }
+
+        .loginBtn a { position: absolute; top: 50%; transform: translateY(-50%); display: flex; text-decoration-line: none; }
+        .loginBtn a img, .loginBtn a span { margin: auto 15px;}
+        .loginBtn a span { color: rgba(0, 0, 0, 0.54); font-size: 14px; font-weight: 600; }
+    </style>
 </head>
 <body>
+<main>
     <div class="container">
-<!--        <div class="logo">-->
-<!--            GO-->
-<!--            NKLCB-->
-<!--        </div>-->
+        <div class="logo font-32">GO NKLCB</div>
+        <div class="explain mg-t-30 font-14">
+            <div class="mg-b-5">GO NKLCB 에 오신걸 환영합니다.</div>
+            <div>개발자를 위한 채용 후기 플랫폼입니다.</div>
+        </div>
         <div class="loginBtn">
-            <a th:href="@{/oauth2/authorization/google}">구글로 계속하기</a>
+            <a th:href="@{/oauth2/authorization/google}"><img th:src="@{/images/google.svg}" /><span> 구글로 계속하기</span></a>
         </div>
     </div>
+</main>
 </body>
 </html>
