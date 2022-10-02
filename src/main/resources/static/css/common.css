@@ -11,11 +11,23 @@
     --google-login: rgba(0, 0, 0, 0.54);
 
     --color-black: #000;
+    --color-gray: #F0F0F0;
 }
 
 body { margin: 0; }
+header, main { margin: 0 1.25rem; }
+a { text-decoration-line: none; }
 
 .container { width: 540px; margin: 0 auto; padding: 0 0.5em; }
+.row { display: flex; flex: 0 100%; justify-content: space-between; margin-top: 1.25rem; }
+
+/* header */
+#header { display: flex; }
+#header .logo { color: var(--nklcb-logo-color); font-weight: 600; margin-top: 5px; }
+#header .logo a { color: var(--nklcb-logo-color); }
+#header .menu svg { width: 24px; height: 24px; color: var(--color-black); }
+
+main { display: flex; padding-bottom: 80px; }
 
 /* footer */
 .footer { padding: 30px 10%; background: #E6E6E6; text-align: right; }
@@ -43,4 +55,4 @@ body { margin: 0; }
 .mg-t-10 { margin-top: 0.625em; }
 .mg-t-20 { margin-top: 1.25em; }
 .mg-t-30 { margin-top: 1.88em; }
-
+.mg-t-40 { margin-top: 2.50em; }

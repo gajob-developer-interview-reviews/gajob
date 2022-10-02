@@ -1,12 +1,3 @@
-header, main { margin: 0 1.25rem; }
-
-.row { display: flex; flex: 0 100%; justify-content: space-between; margin-top: 1.25rem; }
-
-#header { display: flex; }
-#header .logo { color: var(--nklcb-logo-color); font-weight: 600; margin-top: 5px; }
-#header .menu svg { width: 24px; height: 24px; color: var(--color-black); }
-
-main { display: flex; padding-bottom: 80px; }
 .explain { display: flex; flex: 0 100%; flex-direction: column; }
 
 .search-form { display: flex; flex: 0 100%; justify-content: space-between; }
