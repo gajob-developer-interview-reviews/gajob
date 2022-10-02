@@ -1,6 +1,6 @@
-package go.nkrcd.web.company.repository;
+package go.nkrcd.web.main.repository;
 
-import go.nkrcd.web.company.model.Company;
+import go.nkrcd.web.main.model.Company;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

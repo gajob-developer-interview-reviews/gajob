@@ -1,7 +1,7 @@
 package go.nkrcd.web.crawler;
 
-import go.nkrcd.web.company.model.Company;
-import go.nkrcd.web.company.repository.CompanyRepository;
+import go.nkrcd.web.main.model.Company;
+import go.nkrcd.web.main.repository.CompanyRepository;
 import go.nkrcd.web.crawler.Service.CrawlerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

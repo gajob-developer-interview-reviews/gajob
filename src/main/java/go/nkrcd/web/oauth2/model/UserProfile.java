@@ -1,6 +1,6 @@
 package go.nkrcd.web.oauth2.model;
 
-import go.nkrcd.web.user.model.User;
+import go.nkrcd.web.main.model.User;
 import lombok.Getter;
 
 /*

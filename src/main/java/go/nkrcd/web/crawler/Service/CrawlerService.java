@@ -1,7 +1,7 @@
 package go.nkrcd.web.crawler.Service;
 
-import go.nkrcd.web.company.model.Company;
-import go.nkrcd.web.company.repository.CompanyRepository;
+import go.nkrcd.web.main.model.Company;
+import go.nkrcd.web.main.repository.CompanyRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

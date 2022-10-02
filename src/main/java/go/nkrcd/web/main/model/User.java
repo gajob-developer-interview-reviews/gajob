@@ -1,4 +1,4 @@
-package go.nkrcd.web.user.model;
+package go.nkrcd.web.main.model;
 
 import lombok.Builder;
 import lombok.Getter;
