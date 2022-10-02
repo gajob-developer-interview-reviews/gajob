@@ -1,0 +1,40 @@
+.profile { margin-top: 20px; display: flex; flex: 0 100%; }
+
+.profile .image { width: 70px; height: 70px; background-color: #E6E6E6; }
+.profile .image img { width: 70px; height: 70px; }
+
+.profile .info { margin-left: 15px; }
+.profile .info { display: flex; flex-direction: column; }
+
+.profile .info .btns { margin-top: 10px; display: flex; text-align: center; }
+.profile .info .btns div {
+    display: flex;
+    align-items: center;
+    justify-content : center;
+}
+.profile .info .btns .wirte_review { width: 110px; height: 28px; border-radius: 3px; background-color: var(--nklcb-orange-01); }
+.profile .info .btns .logout { width: 110px; height: 28px; margin-left: 15px; border-radius: 3px; color: var(--nklcb-orange-01); border: 0.5px solid var(--nklcb-orange-01); }
+.profile .info .btns div a { width: 100%; font-weight: 600; color: var(--color-black); }
+.profile .info .btns .logout a { color: var(--nklcb-orange-01); }
+
+.reviews .review-line { width: 100%; height: 1px; margin: 10px 0; background-color: var(--nklcb-logo-color) }
+
+.reviews .review-list { min-height: 950px; }
+.reviews .review-list .review-box {
+    height: 46px;
+
+    display: flex;
+    flex: 0 100%;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+    padding: 5px;
+
+    background-color: var(--color-gray);
+
+    display: flex;
+    align-items: center;
+}
+.reviews .review-list .review-box .review { display: flex; flex-direction: column; }
+.reviews .review-list .review-box .review .company { margin-bottom: 5px; }
+.reviews .review-list .review-box .review-del a { color: var(--nklcb-logo-color); margin-right: 10px; }
