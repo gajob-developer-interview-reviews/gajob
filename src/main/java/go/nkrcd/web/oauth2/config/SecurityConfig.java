@@ -11,12 +11,16 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.AccessDeniedHandler;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
     @Autowired
     OAuthService oAuthService;
+
+    @Autowired
+    CustomAccessDeniedHandler customAccessDeniedHandler;
 
     @Bean
     public static PasswordEncoder passwordEncoder() {
@@ -34,9 +38,14 @@ public class SecurityConfig {
                 .csrf().disable()
 
                 .authorizeRequests()
-                .antMatchers("/", "/login").permitAll()
+                .antMatchers("/", "/login", "/error").permitAll()
                 .antMatchers("/crawler/**").access("hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")
                 .anyRequest().authenticated()
+                .and()
+
+                // 접근 권한 없을 시 핸들러
+                .exceptionHandling()
+                .accessDeniedHandler(customAccessDeniedHandler)
                 .and()
 
                 .logout()
