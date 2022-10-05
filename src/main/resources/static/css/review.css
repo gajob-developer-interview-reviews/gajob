@@ -1,0 +1,77 @@
+#header .prev a, #header .prev a i { color: var(--color-darkgray); }
+#header .pagename { width: 100%; text-align: center; }
+
+/*.review-form { min-height: 950px; }*/
+
+.review-form div span { font-weight: 600; }
+
+.review-form .company div {
+    width: 100%;
+    height: 40px;
+
+    background-color: var(--color-rightgray);
+
+    border: 0.5px solid var(--nklcb-orange-02);
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+}
+.review-form .company div input { width: 100%; margin: 0 15px; border: 0; outline: none; background-color: transparent; }
+
+.level div { display: flex; justify-content: space-evenly; }
+.form-radio-btn { flex-direction: column; }
+.form-radio-btn input[type=radio] {
+    appearance: none;
+
+    width: 40px;
+    height: 40px;
+
+    margin: 10px auto;
+
+    background-color: var(--nklcb-orange-03);
+    border-radius: 25px;
+    border: 0.5px solid var(--nklcb-orange-01);
+}
+.form-radio-btn input[type=radio]:checked { background-color: var(--nklcb-orange-01); }
+.form-radio-btn input[type=radio] { background-color: var(--nklcb-orange-03); }
+
+.form-checkbox { display: flex; align-items: center; }
+.form-checkbox input[type=checkbox] {
+    appearance: none;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: var(--color-white);
+    border: 0.5px solid var(--nklcb-logo-color);
+}
+.form-checkbox input[type=checkbox]:checked { background-color: var(--nklcb-logo-color); }
+.form-checkbox input[type=checkbox] { background-color: var(--color-white); }
+
+.expText textarea {
+    resize: none;
+
+    width: 90%;
+    height: 180px;
+
+    padding: 5px;
+
+    background-color: var(--color-gray);
+    border: none;
+    border-radius: 3px;
+}
+.expText textarea:focus { outline: var(--color-darkgray); }
+
+.review-save {
+    width: 100%;
+    height: 50px;
+
+    background-color: var(--nklcb-logo-color);
+    color: var(--color-white);
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+}
+.review-save a { width: 100%; color: var(--color-white); font-weight: 600; }
