@@ -19,7 +19,6 @@
 
 .reviews .review-line { width: 100%; height: 1px; margin: 10px 0; background-color: var(--nklcb-logo-color) }
 
-.reviews .review-list { min-height: 950px; }
 .reviews .review-list .review-box {
     height: 46px;
 

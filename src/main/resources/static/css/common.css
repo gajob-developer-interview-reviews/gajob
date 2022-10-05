@@ -10,26 +10,31 @@
     --google-login-hover-shadow: 0px 0px 14.5152px rgba(66, 133, 244, 0.7);
     --google-login: rgba(0, 0, 0, 0.54);
 
+    --color-white: #FFF;
     --color-black: #000;
+    --color-rightgray: #FAFAFA;
     --color-gray: #F0F0F0;
+    --color-darkgray: #707070;
 }
 
 body { margin: 0; }
 header, main { margin: 0 1.25rem; }
+main { min-height: 80vh; display: flex; }
 a { text-decoration-line: none; }
 
-.container { width: 540px; margin: 0 auto; padding: 0 0.5em; }
+.container { width: 540px; margin: 0 auto; }
 .row { display: flex; flex: 0 100%; justify-content: space-between; margin-top: 1.25rem; }
 
 /* header */
 #header { display: flex; }
 #header .logo { color: var(--nklcb-logo-color); font-weight: 600; margin-top: 5px; }
 #header .logo a { color: var(--nklcb-logo-color); }
+/*#header .menu a { display: flex; align-items:center; }*/
+#header .menu { margin-top: auto; }
 #header .menu svg { width: 24px; height: 24px; color: var(--color-black); }
 
-main { display: flex; padding-bottom: 80px; }
-
 /* footer */
+footer { padding-top: 80px; }
 .footer { padding: 30px 10%; background: #E6E6E6; text-align: right; }
 .footer svg { width: 18px; height: 18px; }
 
@@ -50,9 +55,15 @@ main { display: flex; padding-bottom: 80px; }
 /* margin & padding */
 .mg-b-5 { margin-bottom: 0.313em; }
 .mg-b-10 { margin-bottom: 0.625em; }
+.mg-b-20 { margin-bottom: 1.25em; }
 
 .mg-t-5 { margin-top: 0.313em; }
 .mg-t-10 { margin-top: 0.625em; }
 .mg-t-20 { margin-top: 1.25em; }
 .mg-t-30 { margin-top: 1.88em; }
 .mg-t-40 { margin-top: 2.50em; }
+
+.mg-l-5 { margin-left: 0.313em; }
+.mg-l-10 { margin-left: 0.625em; }
+.mg-l-20 { margin-left: 1.25em; }
+.mg-l-30 { margin-left: 1.88em; }
