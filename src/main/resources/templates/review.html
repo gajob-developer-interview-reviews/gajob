@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" >
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1" charset="UTF-8" >
-    <title>Main</title>
+    <th:block th:replace="common/head"></th:block>
 
-    <link href="common.css" th:href="@{/css/common.css}" rel="stylesheet" />
     <link href="review.css" th:href="@{/css/review.css}" rel="stylesheet" />
-
-    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
 <header id="header">
@@ -78,9 +74,7 @@
 
     </div>
 </main>
-<footer>
-    <div class="footer"><i data-feather="mail"></i></div>
-</footer>
+<footer th:replace="~{common/footer :: footer}"></footer>
 <!-- 아이콘 적용 -->
 <script>
     feather.replace()
