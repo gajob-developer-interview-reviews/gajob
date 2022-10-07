@@ -5,7 +5,7 @@
 
 .review-form div span { font-weight: 600; }
 
-.review-form .company div {
+.review-form .company .input-box {
     width: 100%;
     height: 40px;
 
@@ -18,6 +18,19 @@
     align-items: center;
 }
 .review-form .company div input { width: 100%; margin: 0 15px; border: 0; outline: none; background-color: transparent; }
+.review-form .company #keyword-box {
+    display: none;
+
+    padding: 10px;
+
+    /*position: absolute;*/
+    /*z-index: 1;*/
+
+    /*width: 100%;*/
+
+    background-color: var(--color-rightgray);
+}
+.review-form .company #keyword-box .item { margin: 10px 5px; }
 
 .level div { display: flex; justify-content: space-evenly; }
 .form-radio-btn { flex-direction: column; }

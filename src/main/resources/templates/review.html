@@ -20,9 +20,11 @@
             <form>
                 <div class="company">
                     <span class="font-16">등록할 회사를 선택해주세요</span>
-                    <div class="mg-t-10">
-                        <input type="text" name="company" placeholder="예: 인하공업전문주식회사" />
+                    <div class="input-box mg-t-10">
+                        <input type="text" id="cId" name="cId" hidden/>
+                        <input type="text" id="company" name="name" placeholder="예: 인하공업전문주식회사"/>
                     </div>
+                    <div id="keyword-box" class="invisble"></div>
                 </div>
                 <div class="level mg-t-30">
                     <span class="font-16">난이도는 어떠셨나요?</span>
@@ -75,16 +77,62 @@
     </div>
 </main>
 <footer th:replace="~{common/footer :: footer}"></footer>
-<!-- 아이콘 적용 -->
 <script>
+    <!-- 아이콘 적용 -->
     feather.replace()
 
+    /*
+     * 난이도
+     */
     function checkExp(cb) {
         let ta = cb.parentNode.nextElementSibling;
         if(cb.checked)
             ta.style.display = '';
         else
             ta.style.display = 'none';
+    }
+
+    /*
+     * 회사 선택
+     */
+    const inputCompany = document.getElementById("company");
+    inputCompany.oninput = function () {
+        let data = inputCompany.value;
+        let searchDTO = {
+            search : data
+        };
+        $.ajax({
+            url: "/search/company",
+            data: searchDTO,
+            type: "POST",
+        }).done(function (result) {
+            const keyword = document.getElementById("keyword-box");
+
+            // 회사 리스트가 없는 경우 표시 안하도록
+            if (result == "" || result == null) {
+                keyword.style.display = 'none';
+                return false;
+            }
+
+            let list = "";
+            for (let i=0; i<result.length; i++) {
+                list += `<div class='item' id=${result[i].cid} onclick="selectCompany(this)">${result[i].name}</div>`;
+            }
+
+            keyword.innerHTML = list;
+            keyword.style.display = 'block';
+        });
+    }
+
+    function selectCompany(item) {
+        let name = item.innerText;
+        let cId = item.id;
+
+        document.getElementById("cId").value = cId;
+        document.getElementById("company").value = name;
+
+        const keyword = document.getElementById("keyword-box");
+        keyword.style.display = 'none';
     }
 
 </script>
