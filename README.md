@@ -35,4 +35,8 @@ OAuth2.0 - 구글 로그인 적용 <br/>
 > thymeleaf-extras-springsecurity5 , 
 > spring-security-test , 
 > spring-boot-starter-oauth2-client
- 
+
+---
+**2022.10.09** <br/>
+> Dependancies <br/> <br/>
+> json 
