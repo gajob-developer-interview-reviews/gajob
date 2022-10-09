@@ -1,5 +1,6 @@
 package go.nkrcd.web.main.model;
 
+import go.nkrcd.web.review.model.Review;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,6 +9,8 @@ import org.springframework.util.Assert;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -26,6 +29,9 @@ public class Company {
     private String delYn;
 
     private String delDt;
+
+    @OneToMany(mappedBy = "company")
+    private List<Review> review = new ArrayList<>();
 
     @Builder
     public Company(String cId, Company company) {

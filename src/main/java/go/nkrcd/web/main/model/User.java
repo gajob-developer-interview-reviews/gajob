@@ -1,5 +1,6 @@
 package go.nkrcd.web.main.model;
 
+import go.nkrcd.web.review.model.Review;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,6 +9,8 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.util.Assert;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -36,6 +39,9 @@ public class User {
 
     private String delYn;
     private String delDt;
+
+    @OneToMany(mappedBy = "user")
+    private List<Review> review = new ArrayList<>();
 
     @Builder
     public User(String oauthId, String name, String email, String picture) {
