@@ -13,4 +13,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     Optional<User> findByOauthId(String oauthId);
 
+    @Query("select u from User u where u.oauthId = :oauthId")
+    User findUserByOauthId(@Param("oauthId")String oauthId);
+
 }

@@ -17,11 +17,11 @@
 <main>
     <div class="container">
         <div class="review-form font mg-t-20">
-            <form>
+            <form th:object="${addReview}">
                 <div class="company">
                     <span class="font-16">등록할 회사를 선택해주세요</span>
                     <div class="input-box mg-t-10">
-                        <input type="text" id="cId" name="cId" hidden/>
+                        <input type="text" id="cId" th:field="*{cId}" hidden/>
                         <input type="text" id="company" name="name" placeholder="예: 인하공업전문주식회사"/>
                     </div>
                     <div id="keyword-box" class="invisble"></div>
@@ -30,43 +30,35 @@
                     <span class="font-16">난이도는 어떠셨나요?</span>
                     <div class="mg-t-10">
                         <div class="form-radio-btn radio-low font-14">
-                            <input id="radio-1" type="radio" name="level" value="low" />
+                            <input id="radio-1" type="radio" th:field="*{level}" th:value="low" />
                             <label for="radio-1">쉬워요</label>
                         </div>
                         <div class="form-radio-btn radio-mid font-14">
-                            <input id="radio-2" type="radio" name="level" value="mid" checked />
+                            <input id="radio-2" type="radio" th:field="*{level}" th:value="mid"/>
                             <label for="radio-2">보통이에요</label>
                         </div>
                         <div class="form-radio-btn radio-high font-14">
-                            <input id="radio-3" type="radio" name="level" value="high" />
+                            <input id="radio-3" type="radio" th:field="*{level}" th:value="high" />
                             <label for="radio-3">어려워요</label>
                         </div>
                     </div>
                 </div>
                 <div class="experience mg-t-30">
                     <span class="font-16">경험한 항목을 선택하고 후기를 작성해주세요.</span>
-                    <div class="mg-t-5">
-                        <div class="font-14">
-                            <div class="form-checkbox">
-                                <input id="check-1" type="checkbox" name="expType" value="rp01" onclick="checkExp(this)"/>
-                                <label for="check-1" class="mg-l-10">서류전형</label>
-                            </div>
-                            <div class="expText mg-t-5 mg-l-30" id="rp01_cn" style="display: none;">
-                                <textarea placeholder="후기를 작성해주세요"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mg-t-5">
-                        <div class="font-14">
-                            <div class="form-checkbox">
-                                <input id="check-2" type="checkbox" name="expType" value="rp02" onclick="checkExp(this)"/>
-                                <label for="check-2" class="mg-l-10">코딩테스트</label>
-                            </div>
-                            <div class="expText mg-t-5 mg-l-30" id="rp02_cn" style="display: none;">
-                                <textarea placeholder="후기를 작성해주세요"></textarea>
+                    <input type="hidden" name="experience">
+                    <th:block th:each="code : ${codes}">
+                        <div class="mg-t-5">
+                            <div class="font-14">
+                                <div class="form-checkbox">
+                                    <input id="expType" type="checkbox" th:value="${code.cdId}" onclick="checkExp(this)"/>
+                                    <label for="expType" class="mg-l-10" th:text="${code.cdName}"></label>
+                                </div>
+                                <div class="expText mg-t-5 mg-l-30" style="display: none;">
+                                    <textarea th:id="${code.cdId + '_cn'}" placeholder="후기를 작성해주세요"></textarea>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </th:block>
                 </div>
             </form>
         </div>
@@ -82,7 +74,7 @@
     feather.replace()
 
     /*
-     * 난이도
+     * 경험 선택
      */
     function checkExp(cb) {
         let ta = cb.parentNode.nextElementSibling;
@@ -133,6 +125,27 @@
 
         const keyword = document.getElementById("keyword-box");
         keyword.style.display = 'none';
+    }
+
+    /*
+     * 후기 등록하기
+     */
+    function save() {
+        let form = document.querySelector("form");
+        form.method = "POST";
+        form.action = "/review";
+
+        let experience = new Array();
+        document.querySelectorAll("input[id=expType]:checked").forEach(function (item) {
+            let data = new Object();
+            data.cdId = item.value;
+            data.content = document.getElementById(item.value + "_cn").value;
+
+            experience.push(data);
+        });
+        document.querySelector("input[name=experience]").value = `{"experience":${JSON.stringify(experience)}}`;
+
+        form.submit();
     }
 
 </script>
