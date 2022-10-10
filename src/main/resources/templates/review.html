@@ -21,8 +21,8 @@
                 <div class="company">
                     <span class="font-16">등록할 회사를 선택해주세요</span>
                     <div class="input-box mg-t-10">
-                        <input type="text" id="cId" th:field="*{cId}" hidden/>
-                        <input type="text" id="company" name="name" placeholder="예: 인하공업전문주식회사"/>
+                        <input type="text" th:field="*{cId}" hidden/>
+                        <input type="text" id="company" name="name" placeholder="회사명을 입력해주세요"/>
                     </div>
                     <div id="keyword-box" class="invisble"></div>
                 </div>
@@ -135,19 +135,55 @@
         form.method = "POST";
         form.action = "/review";
 
-        let experience = new Array();
+        if (document.getElementById("cId").value == null || document.getElementById("cId").value == "") {
+            alert("회사를 선택해주세요");
+            return false;
+        }
+
+        if (document.querySelectorAll("input[id=expType]:checked").length < 1) {
+            alert("작성하실 항목을 한 개 이상 선택해주세요");
+            return false;
+        }
+        let arr_experience = new Array();
+        let notnull = true;
         document.querySelectorAll("input[id=expType]:checked").forEach(function (item) {
             let data = new Object();
             data.cdId = item.value;
-            data.content = document.getElementById(item.value + "_cn").value;
 
-            experience.push(data);
+            let content = document.getElementById(item.value + "_cn").value;
+            if(content == null || content == "") {
+                notnull = false;
+            }
+            data.content = content;
+
+            arr_experience.push(data);
         });
-        document.querySelector("input[name=experience]").value = `{"experience":${JSON.stringify(experience)}}`;
+        if(!notnull) {
+            alert("후기를 작성해주세요");
+            return false;
+        }
 
-        form.submit();
+        let cId = document.getElementById("cId").value;
+        let level = document.querySelector("input[name=level]:checked").value;
+        let experience = `{"experience":${JSON.stringify(arr_experience)}}`;
+        let addReview = {
+            cId :cId,
+            level : level,
+            experience : experience
+        };
+        $.ajax({
+            url: "/review",
+            data: addReview,
+            type: "POST",
+        }).done(function (result) {
+            let code = result.code;
+
+            if (code == 'INTERNAL_SERVER_ERROR')
+                alert(result.msg);
+            else
+                location.href = "/mypage";
+        });
     }
-
 </script>
 </body>
 </html>
