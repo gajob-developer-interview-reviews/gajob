@@ -40,3 +40,15 @@ OAuth2.0 - 구글 로그인 적용 <br/>
 **2022.10.09** <br/>
 > Dependancies <br/> <br/>
 > json 
+
+---
+**2022.10.10** <br/>
+REST API 응답 형식 추가 <br/>
+> RestEntity <br/> <br/>
+> HttpStatus , msg, data 를 가짐
+
+> USE <br/> <br/>
+> public ResponseEntity save( ... ) { <br/>
+> return new ResponseEntity(RestEntity.res(HttpStatus.OK, "후기가 등록되었습니다.", null), HttpStatus.OK); <br/>
+> }
+
