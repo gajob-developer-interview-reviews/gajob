@@ -10,12 +10,16 @@ import go.nkrcd.web.review.model.Experience;
 import go.nkrcd.web.review.model.Review;
 import go.nkrcd.web.review.repository.ExperienceRepository;
 import go.nkrcd.web.review.repository.ReviewRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Slf4j
 public class ReviewService {
 
     @Autowired
@@ -30,9 +34,9 @@ public class ReviewService {
     @Autowired
     ReviewRepository reviewRepository;
 
+    @Transactional(isolation = Isolation.DEFAULT)
     public void save(AddReview addReview, User user) {
         Company company = companyRepository.findByCid(addReview.getCId());
-
         Review review = Review.builder()
                 .company(company)
                 .user(user)
@@ -49,6 +53,10 @@ public class ReviewService {
             String content = object.getString("content");
 
             Code code = codeRepository.findByCId(cdId);
+            if (code == null) {
+                // 존재하지 않는 코드를 사용하는 경우 에러 발생 시킴
+                throw new RuntimeException("존재하지 않는 코드값");
+            }
             Experience experience = Experience.builder()
                     .review(review)
                     .code(code)

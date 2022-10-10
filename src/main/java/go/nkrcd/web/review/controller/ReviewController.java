@@ -22,12 +22,6 @@ public class ReviewController {
     @Autowired
     CodeRepository codeRepository;
 
-    @Autowired
-    UserService userService;
-
-    @Autowired
-    ReviewService reviewService;
-
     /*
      * 마이페이지 > 후기 작성하기
      */
@@ -41,18 +35,6 @@ public class ReviewController {
         model.addAttribute("codes", codes);
 
         return "review";
-    }
-
-    /*
-     * 마이페이지 > 후기 작성하기 > 후기 등록하기
-     */
-    @RequestMapping(value = "", method = {RequestMethod.POST})
-    public String save(AddReview addReview, Authentication authentication) {
-
-        User user = userService.findUserByOauthId(authentication.getName());
-        reviewService.save(addReview, user);
-
-        return "redirect:/mypage";
     }
 
 }
