@@ -11,13 +11,15 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.access.AccessDeniedHandler;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
     @Autowired
     OAuthService oAuthService;
+
+    @Autowired
+    CustomOAuthSuccessHandler customOAuthSuccessHandler;
 
     @Autowired
     CustomAccessDeniedHandler customAccessDeniedHandler;
@@ -38,7 +40,7 @@ public class SecurityConfig {
                 .csrf().disable()
 
                 .authorizeRequests()
-                .antMatchers("/", "/login", "/error").permitAll()
+                .antMatchers("/", "/login", "/join", "/join/**", "/error").permitAll()
                 .antMatchers("/crawler/**").access("hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")
                 .anyRequest().authenticated()
                 .and()
@@ -54,8 +56,8 @@ public class SecurityConfig {
 
                 .oauth2Login()
                 .loginPage("/login")
-                .defaultSuccessUrl("/")
                 .failureUrl("/login")
+                .successHandler(customOAuthSuccessHandler)
                 .userInfoEndpoint()
                 .userService(oAuthService);
 

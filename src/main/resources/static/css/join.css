@@ -1,0 +1,33 @@
+main { display: flex; }
+.logo { color: var(--nklcb-logo-color); font-weight: 600; margin-top: 5px; }
+
+.container .logo { text-align: center; margin-top: 200px; }
+.explain { display: flex; flex: 0 100%; flex-direction: column; }
+
+.explain .degree-text {
+    width: 100%;
+    max-height: 200px;
+
+    display: flex;
+    word-break:break-all;
+    overflow: auto;
+
+    margin: 5px 0;
+    border-radius: 0.375rem;
+
+    background-color: var(--color-rightgray);
+}
+.explain .degree-text span { display: flex; }
+
+.join-btn {
+    width: 100%;
+    height: 50px;
+
+    background-color: var(--nklcb-logo-color);
+    color: var(--color-white);
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+}
+.join-btn a { width: 100%; color: var(--color-white); font-weight: 600; }
