@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="experience mg-t-30">
-                    <span class="font-16">경험한 항목을 선택하고 후기를 작성해주세요.</span>
+                    <span class="font-16">진행된 채용 방식을 선택하고 후기를 작성해주세요.</span>
                     <input type="hidden" name="experience">
                     <th:block th:each="code : ${codes}">
                         <div class="mg-t-5">
@@ -141,7 +141,7 @@
         }
 
         if (document.querySelectorAll("input[id=expType]:checked").length < 1) {
-            alert("작성하실 항목을 한 개 이상 선택해주세요");
+            alert("채용 방식을 한 개 이상 선택해주세요");
             return false;
         }
         let arr_experience = new Array();
@@ -159,7 +159,7 @@
             arr_experience.push(data);
         });
         if(!notnull) {
-            alert("선택한 항목에 대한 후기를 작성해주세요");
+            alert("선택한 채용 방식에 대한 후기를 작성해주세요");
             return false;
         }
 
