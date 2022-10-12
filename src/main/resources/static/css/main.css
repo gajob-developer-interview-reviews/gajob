@@ -9,11 +9,11 @@
 .search-form .search-box ::placeholder { font-size: 12px; }
 
 .search-list { display: flex; flex: 0 100%; flex-direction: column; }
-.search-list .item { height: 50px; display: flex; flex: 0 100%; flex-direction: column; margin: 5px 0; padding: 5px 0;}
+.search-list .item { height: 50px; display: flex; flex: 0 100%; flex-direction: column; padding: 5px 0;}
 .search-list .item .item-name { font-weight: 700; padding-bottom: 2.5px; }
 .search-list .item .item-addr svg { width: 11px; height: 11px; }
 .search-list .item .item-addr { padding-top: 2.5px;}
-.search-list .line { height: 0.5px; background: var(--nklcb-orange-01); margin: 10px 0; }
+.search-list .line { height: 0.5px; background: var(--nklcb-orange-01); margin-bottom: 5px; }
 
 /*!* 화면 사이즈가 600px 이상인 경우 *!*/
 /*@media all and (min-width: 600px) {*/
