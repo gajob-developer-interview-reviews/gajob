@@ -12,7 +12,7 @@
 
     --color-white: #FFF;
     --color-black: #000;
-    --color-rightgray: #FAFAFA;
+    --color-lightgray: #FAFAFA;
     --color-gray: #F0F0F0;
     --color-darkgray: #707070;
 }
@@ -20,7 +20,7 @@
 body { margin: 0; }
 header, main { margin: 0 1.25rem; }
 main { min-height: 80vh; display: flex; }
-a { text-decoration-line: none; }
+a { text-decoration-line: none; color: var(--color-black); }
 
 .container { width: 450px; margin: 0 auto; }
 .row { display: flex; flex: 0 100%; justify-content: space-between; margin-top: 1.25rem; }
@@ -30,8 +30,10 @@ a { text-decoration-line: none; }
 #header .logo { color: var(--nklcb-logo-color); font-weight: 600; margin-top: 5px; }
 #header .logo a { color: var(--nklcb-logo-color); }
 /*#header .menu a { display: flex; align-items:center; }*/
-#header .menu { margin-top: auto; }
-#header .menu svg { width: 24px; height: 24px; color: var(--color-black); }
+#header .menu { display: flex; margin-top: auto; }
+#header .menu li { list-style: none; padding-left: 0px; }
+#header .menu li:nth-child(2) { margin-left: 20px; }
+
 
 /* footer */
 footer { padding-top: 80px; }
