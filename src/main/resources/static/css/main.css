@@ -2,18 +2,43 @@
 
 .search-form { display: flex; flex: 0 100%; justify-content: space-between; }
 .search-form div { margin: auto 0; }
-.search-form .search-box { display: flex; width: 200px; height: 25px; padding: 0 14px; background: var(--nklcb-search); border: 0.5px solid var(--nklcb-logo-color); border-radius: 20px; }
-.search-form .search-box svg { width: 14px; height: 14px; margin: auto 0; }
+
+.search-form .search-box { display: flex; width: 80%; height: 25px; border-bottom: 0.5px solid var(--color-darkgray); }
 .search-form .search-box input[name=keyword] { width: 100%; margin: 0 5px; border: 0; outline: none; background-color: transparent; }
-.search-form .search-box input[name=keyword i] { font-size: 12px; }
-.search-form .search-box ::placeholder { font-size: 12px; }
+.search-form .search-box input[name=keyword i] { font-size: 14px; }
+.search-form .search-box ::placeholder { font-size: 14px; }
+
+.search-form .search-btn {
+    width: 50px;
+    height: 30px;
+
+    border-radius: 2px;
+    background-color: var(--nklcb-logo-color);
+
+    display: flex;
+    align-items: center;
+}
+.search-form .search-btn svg { width: 14px; height: 14px; margin: 0 auto; color: var(--color-white); }
 
 .search-list { display: flex; flex: 0 100%; flex-direction: column; }
-.search-list .item { height: 50px; display: flex; flex: 0 100%; flex-direction: column; padding: 5px 0;}
+.search-list .info, .search-list .item {
+    height: 60px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px 20px;
+    margin: 8px 0;
+
+    background-color: var(--color-white);
+    border: 0.5px solid var(--color-darkgray);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+.search-list .info { background-color: var(--color-gray); }
+.search-list .info div, .search-list .item div { margin: auto 0; }
 .search-list .item .item-name { font-weight: 700; padding-bottom: 2.5px; }
-.search-list .item .item-addr svg { width: 11px; height: 11px; }
 .search-list .item .item-addr { padding-top: 2.5px;}
-.search-list .line { height: 0.5px; background: var(--nklcb-orange-01); margin-bottom: 5px; }
 
 /*!* 화면 사이즈가 600px 이상인 경우 *!*/
 /*@media all and (min-width: 600px) {*/

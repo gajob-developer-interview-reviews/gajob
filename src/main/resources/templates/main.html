@@ -9,24 +9,26 @@
 <header th:replace="~{common/header :: header}"></header>
 <main>
     <div class="container">
-        <div class="explain font mg-t-10">
-            <div class="font-16 mg-b-10">가잡은 개발자를 위한 채용 후기 공유 커뮤니티입니다.</div>
-            <div class="font-14">관심있는 회사의 후기를 확인해보세요</div>
-        </div>
-        <div class="search-form font mg-t-30">
-            <div class="font-18">회사</div>
+        <div class="search-form font mg-t-40">
             <div class="search-box">
-                <i data-feather="search"></i>
-                <input type="text" name="keyword" placeholder="회사명을 입력해주세요"/>
+                <input type="text" name="keyword" placeholder="회사를 검색해주세요"/>
             </div>
+            <div class="search-btn"><i data-feather="search"></i></div>
         </div>
-        <div class="search-list font mg-t-5">
+        <div class="search-list font mg-t-10">
+            <div class="info">
+                <div class="font-16">가잡</div>
+                <div class="font-12">
+                    개발자 채용 후기를 확인해보세요 <br/>
+                    * 가잡에 대한 소개를 간단히 적을 예정
+                </div>
+            </div>
+
             <th:bock th:each="num : ${#numbers.sequence(1,10)}">
                 <div class="item">
-                    <div class="item-name font-16">네이버</div>
-                    <div class="item-addr font-12"><i data-feather="map-pin"></i> 서울</div>
+                    <div class="item-name font-16">카카오</div>
+                    <div class="item-addr font-12">제주특별자치도 제주시 첨단로 216-19</div>
                 </div>
-                <div class="line"></div>
             </th:bock>
         </div>
     </div>

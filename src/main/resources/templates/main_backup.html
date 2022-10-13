@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:replace="common/head"></th:block>
+
+    <link href="main.css" th:href="@{/css/main.css}" rel="stylesheet" />
+</head>
+<body>
+<header th:replace="~{common/header :: header}"></header>
+<main>
+    <div class="container">
+        <div class="explain font mg-t-10">
+            <div class="font-16 mg-b-10">가잡은 개발자를 위한 채용 후기 공유 커뮤니티입니다.</div>
+            <div class="font-14">관심있는 회사의 후기를 확인해보세요</div>
+        </div>
+        <div class="search-form font mg-t-30">
+            <div class="font-18">회사</div>
+            <div class="search-box">
+                <i data-feather="search"></i>
+                <input type="text" name="keyword" placeholder="회사명을 입력해주세요"/>
+            </div>
+        </div>
+        <div class="search-list font mg-t-5">
+            <th:bock th:each="num : ${#numbers.sequence(1,10)}">
+                <div class="item">
+                    <div class="item-name font-16">네이버</div>
+                    <div class="item-addr font-12"><i data-feather="map-pin"></i> 서울</div>
+                </div>
+                <div class="line"></div>
+            </th:bock>
+        </div>
+    </div>
+</main>
+<footer th:replace="~{common/footer :: footer}"></footer>
+<!-- 아이콘 적용 -->
+<script>
+    feather.replace()
+</script>
+</body>
+</html>
