@@ -53,8 +53,9 @@ public class ReviewController {
     @ResponseBody
     @RequestMapping(value = "", method = {RequestMethod.POST})
     public ResponseEntity save(AddReview addReview, Authentication authentication) {
-        User user = userService.findUserByOauthId(authentication.getName());
+        User user = userService.findByOauthIdAndDelYn(authentication.getName());
         try {
+            if(user.getOauthId() == null) throw new RuntimeException("사용자 확인 불가");
             reviewService.save(addReview, user);
         } catch (RuntimeException e) {
             return new ResponseEntity(RestEntity.res(HttpStatus.INTERNAL_SERVER_ERROR, "후기가 등록에 실패하였습니다.", null), HttpStatus.OK);

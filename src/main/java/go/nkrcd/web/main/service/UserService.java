@@ -7,14 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserService {
 
     @Autowired
     UserRepository userRepository;
 
-    public User findUserByOauthId(String oauthId) {
-        return userRepository.findUserByOauthId(oauthId);
+    public User findByOauthIdAndDelYn(String oauthId) {
+        Optional<User> user = userRepository.findByOauthIdAndDelYn(oauthId, "N");
+        return user.orElse(new User());
     }
 
     public User join(Authentication authentication) {
