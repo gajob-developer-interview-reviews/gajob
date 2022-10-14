@@ -52,4 +52,10 @@ public class Company {
 
         return this;
     }
+
+    public Company(String cId, String name, String address) {
+        this.cId = cId;
+        this.name = name;
+        this.address = address;
+    }
 }
