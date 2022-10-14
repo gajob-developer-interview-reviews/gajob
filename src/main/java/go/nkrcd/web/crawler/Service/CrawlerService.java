@@ -73,7 +73,7 @@ public class CrawlerService {
                     String name = content.findElement(By.cssSelector("div > div > dl.content_col2_3.cominfo > dt > a")).getText().replace("(주)", "").replace("(유)", "");
                     String address = getAddress(name);
                     String logo = content.findElement(By.cssSelector("div > div > div > a > img")).getAttribute("src");
-                    result.add(new Company(name, address, logo));
+                    result.add(new Company().res(name, address, logo));
                 }
             }
 
@@ -98,7 +98,7 @@ public class CrawlerService {
                             String name = content.findElement(By.cssSelector("div > div > dl.content_col2_3.cominfo > dt > a")).getText().replace("(주)", "").replace("(유)", "");
                             String address = getAddress(name);
                             String logo = content.findElement(By.cssSelector("div > div > div > a > img")).getAttribute("src");
-                            result.add(new Company(name, address, logo));
+                            result.add(new Company().res(name, address, logo));
                         }
                     }
                 }
@@ -118,7 +118,7 @@ public class CrawlerService {
                     String name = content.findElement(By.cssSelector("div > div > dl.content_col2_3.cominfo > dt > a")).getText().replace("(주)", "").replace("(유)", "");
                     String address = getAddress(name);
                     String logo = content.findElement(By.cssSelector("div > div > div > a > img")).getAttribute("src");
-                    result.add(new Company(name, address, logo));
+                    result.add(new Company().res(name, address, logo));
                 }
             }
 
@@ -178,6 +178,7 @@ public class CrawlerService {
                     for (WebElement content : contents) {
                         if(content.findElement(By.cssSelector("dt")).getText().equals("기업주소"))
                             address = content.findElement(By.cssSelector("dd")).getText();
+                        System.out.println("address >>>>>>>>>>>> " + address);
                     }
                 }
             }
