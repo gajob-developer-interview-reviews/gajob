@@ -44,7 +44,7 @@ public class ReviewController {
         model.addAttribute("addReview", addReview);
         model.addAttribute("codes", codes);
 
-        return "review";
+        return "review/add";
     }
 
     /*
