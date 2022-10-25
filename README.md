@@ -52,3 +52,8 @@ REST API 응답 형식 추가 <br/>
 > return new ResponseEntity(RestEntity.res(HttpStatus.OK, "후기가 등록되었습니다.", null), HttpStatus.OK); <br/>
 > }
 
+---
+**2022.10.25** <br/>
+회사 지도 대체 이미지 추가 <br/>
+> abstract-architecture-blue-entrance-perspective-financial.jpg <br/> 
+> 작가 4045 출처 Freepik
