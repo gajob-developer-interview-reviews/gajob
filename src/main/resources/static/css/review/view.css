@@ -1,0 +1,50 @@
+#header .prev a, #header .prev a i { color: var(--color-darkgray); }
+#header .pagename { width: 100%; text-align: center; }
+
+.company-form .map { margin: 10px 0; }
+
+.company-form .map img { width: 100%; height: 170px; background-color: var(--color-lightgray); }
+
+.company-form .info {
+    display: flex;
+    flex-direction: column;
+}
+.company-form .info span { margin: 2px 0; }
+.company-form .info .name { font-weight: 600; }
+
+.company-form .level > span { font-weight: 600; }
+
+.company-form .level .stat { padding: 10px; }
+.company-form .level .stat div {
+    display: flex;
+    justify-content: flex-start;
+}
+.company-form .level .stat div > span { width: 30%; text-align: right; margin: 0 10px; }
+.company-form .level .stat div > div { width: 70%; padding: 2px; }
+.company-form .level .stat .high .bar { width: 50%; background-color: var(--nklcb-orange-02); }
+.company-form .level .stat .mid .bar { width: 40%; background-color: var(--nklcb-orange-01); }
+.company-form .level .stat .low .bar { width: 80%; background-color: var(--nklcb-orange-03); }
+
+.company-form .experience > span { font-weight: 600; }
+.company-form .experience .top3 {
+    display: flex;
+    justify-content: flex-start;
+
+    padding: 10px;
+}
+.company-form .experience .top3 .code {
+    width: 100px;
+    height: 20px;
+
+    background-color: var(--nklcb-logo-color);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 31px;
+
+    display: flex;
+    align-items: center;
+
+    margin: 0 5px;
+}
+.company-form .experience .top3 .code span { color: var(--color-white); margin: 0 auto; }
+
+.line-box { height: 10px; margin: 10px 0; background-color: var(--color-gray); }

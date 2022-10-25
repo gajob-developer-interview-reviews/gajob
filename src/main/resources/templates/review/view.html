@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <th:block th:replace="common/head"></th:block>
+
+    <link href="review.css" th:href="@{/css/review/view.css}" rel="stylesheet" />
+</head>
+<body>
+<header id="header">
+    <div class="container">
+        <div class="row">
+            <div class="prev"><a href="javascript:history.back();"><i data-feather="chevron-left"></i></a></div>
+            <div class="pagename font font-20">티몬</div>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div class="company-form font mg-t-20">
+            <div class="map"><img th:src="@{/images/abstract-architecture-blue-entrance-perspective-financial.jpg}" /></div>
+            <div class="info mg-t-5">
+                <span class="name font-16">티몬</span>
+                <span class="address font-14">서울 강남구 압구정로 118</span>
+            </div>
+            <div class="level mg-t-20">
+                <span class="font-16">지원자들이 느낀 난이도에요</span>
+                <div class="stat">
+                    <div class="high">
+                        <span class="font-14">어려워요</span>
+                        <div><div class="bar"></div></div>
+                    </div>
+                    <div class="mid">
+                        <span class="font-14">보통이에요</span>
+                        <div><div class="bar"></div></div>
+                    </div>
+                    <div class="low">
+                        <span class="font-14">쉬워요</span>
+                        <div><div class="bar"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="experience mg-t-20">
+                <span class="font-16">가장 많이 채용한 방식 TOP3 에요</span>
+                <div class="top3">
+                    <div class="code"><span class="font-12">서류전형</span></div>
+                    <div class="code"><span class="font-12">코딩테스트</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="line-box"></div>
+        <div class="reviews">
+
+        </div>
+    </div>
+</main>
+<footer th:replace="~{common/footer :: footer}"></footer>
+<!-- 아이콘 적용 -->
+<script>
+    feather.replace()
+</script>
+</body>
+</html>

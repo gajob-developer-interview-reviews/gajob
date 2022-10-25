@@ -63,4 +63,12 @@ public class ReviewController {
         return new ResponseEntity(RestEntity.res(HttpStatus.OK, "후기가 등록되었습니다.", null), HttpStatus.OK);
     }
 
+    /*
+     * 마이페이지 > 후기 작성하기 > 후기 등록하기
+     */
+    @RequestMapping(value = "/view", method = {RequestMethod.GET})
+    public String view() {
+        return "review/view";
+    }
+
 }
