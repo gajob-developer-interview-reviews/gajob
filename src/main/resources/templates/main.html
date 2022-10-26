@@ -30,7 +30,7 @@
 
             <th:bock th:each="company : ${companies}">
                 <div class="item">
-                    <div class="item-name font-16"><a th:href="@{view(cId=${company.cId})}"><span th:text="${company.name}"></span></a></div>
+                    <div class="item-name font-16"><a th:href="@{review/view(company=${company.cId})}"><span th:text="${company.name}"></span></a></div>
                     <div class="item-addr font-12"><span th:text="${company.address}"></span></div>
                 </div>
             </th:bock>
