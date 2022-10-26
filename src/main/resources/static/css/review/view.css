@@ -33,7 +33,7 @@
     padding: 10px;
 }
 .company-form .experience .top3 .code {
-    width: 100px;
+    /*width: 100px;*/
     height: 20px;
 
     background-color: var(--nklcb-logo-color);
@@ -45,6 +45,18 @@
 
     margin: 0 5px;
 }
-.company-form .experience .top3 .code span { color: var(--color-white); margin: 0 auto; }
+.company-form .experience .top3 .code span { color: var(--color-white); margin: 10px; }
 
 .line-box { height: 10px; margin: 10px 0; background-color: var(--color-gray); }
+
+.reviews > span { font-weight: 600; }
+.reviews .review-box {
+    display: flex;
+    flex-direction: column;
+
+    margin: 20px 0;
+}
+.reviews .review-box .date { color: var(--color-darkgray); }
+.reviews .review-box .lvl { color: var(--nklcb-logo-color); }
+.reviews .review-box .review { margin: 5px 0; }
+.reviews .review-box .review .type { font-weight: 600; color: var(--color-darkgray); }
