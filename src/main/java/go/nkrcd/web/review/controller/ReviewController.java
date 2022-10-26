@@ -3,7 +3,7 @@ package go.nkrcd.web.review.controller;
 import go.nkrcd.web.main.model.Code;
 import go.nkrcd.web.main.model.RestEntity;
 import go.nkrcd.web.main.model.User;
-import go.nkrcd.web.main.repository.CodeRepository;
+import go.nkrcd.web.main.service.CodeService;
 import go.nkrcd.web.main.service.CompanyService;
 import go.nkrcd.web.main.service.UserService;
 import go.nkrcd.web.review.model.AddReview;
@@ -26,7 +26,7 @@ import java.util.List;
 @RequestMapping("/review")
 public class ReviewController {
     @Autowired
-    CodeRepository codeRepository;
+    CodeService codeService;
 
     @Autowired
     UserService userService;
@@ -38,11 +38,11 @@ public class ReviewController {
     CompanyService companyService;
 
     /*
-     * 마이페이지 > 후기 작성하기
+     * 후기 작성하기
      */
     @RequestMapping(value = "", method = {RequestMethod.GET})
     public String review(Model model) {
-        List<Code> codes = codeRepository.findCodeList();
+        List<Code> codes = codeService.findCodeList();
         AddReview addReview = new AddReview();
         addReview.setLevel(Level.valueOf("mid"));
 
@@ -53,7 +53,7 @@ public class ReviewController {
     }
 
     /*
-     * 마이페이지 > 후기 작성하기 > 후기 등록하기
+     * 후기 작성하기 > 후기 등록하기
      */
     @ResponseBody
     @RequestMapping(value = "", method = {RequestMethod.POST})
