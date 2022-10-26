@@ -23,4 +23,7 @@ public interface CompanyRepository extends JpaRepository<Company, Long> {
 
     @Query("select new go.nkrcd.web.main.model.Company(c.cId, c.name, c.address) from Company c where c.name like %:search% and c.delYn = 'N'")
     List<Company> findCompanyListAll(@Param("search") String search, Pageable pageable);
+
+    @Query("select new go.nkrcd.web.main.model.Company(c.cId, c.name, c.address) from Company c where c.cId like %:cId% and c.delYn = 'N'")
+    Company findCompanyView(@Param("cId") String cid);
 }

@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <div class="prev"><a href="javascript:history.back();"><i data-feather="chevron-left"></i></a></div>
-            <div class="pagename font font-20">티몬</div>
+            <div class="pagename font font-20"><span th:text="${company.name}" /></div>
         </div>
     </div>
 </header>
@@ -19,8 +19,8 @@
         <div class="company-form font mg-t-20">
             <div class="map"><img th:src="@{/images/abstract-architecture-blue-entrance-perspective-financial.jpg}" /></div>
             <div class="info mg-t-5">
-                <span class="name font-16">티몬</span>
-                <span class="address font-14">서울 강남구 압구정로 118</span>
+                <span class="name font-16"><span th:text="${company.name}" /></span>
+                <span class="address font-14"><span th:text="${company.address}" /></span>
             </div>
             <div class="level mg-t-20">
                 <span class="font-16">지원자들이 느낀 난이도에요</span>

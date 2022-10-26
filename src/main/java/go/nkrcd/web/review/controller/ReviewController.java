@@ -4,6 +4,7 @@ import go.nkrcd.web.main.model.Code;
 import go.nkrcd.web.main.model.RestEntity;
 import go.nkrcd.web.main.model.User;
 import go.nkrcd.web.main.repository.CodeRepository;
+import go.nkrcd.web.main.service.CompanyService;
 import go.nkrcd.web.main.service.UserService;
 import go.nkrcd.web.review.model.AddReview;
 import go.nkrcd.web.review.model.Level;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -31,6 +33,9 @@ public class ReviewController {
 
     @Autowired
     ReviewService reviewService;
+
+    @Autowired
+    CompanyService companyService;
 
     /*
      * 마이페이지 > 후기 작성하기
@@ -64,10 +69,12 @@ public class ReviewController {
     }
 
     /*
-     * 마이페이지 > 후기 작성하기 > 후기 등록하기
+     * 후기 보기
      */
     @RequestMapping(value = "/view", method = {RequestMethod.GET})
-    public String view() {
+    public String view(Model model, @RequestParam(name = "company") String cId) {
+        model.addAttribute("company", companyService.findCompanyView(cId));
+
         return "review/view";
     }
 
