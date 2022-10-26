@@ -40,7 +40,7 @@ public class SecurityConfig {
                 .csrf().disable()
 
                 .authorizeRequests()
-                .antMatchers("/", "/login", "/join", "/join/**", "/error").permitAll()
+                .antMatchers("/", "/login", "/join", "/join/**", "/review/view", "/error").permitAll()
                 .antMatchers("/crawler/**").access("hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")
                 .anyRequest().authenticated()
                 .and()
