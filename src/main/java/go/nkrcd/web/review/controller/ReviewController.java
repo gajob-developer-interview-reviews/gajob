@@ -44,7 +44,7 @@ public class ReviewController {
     public String review(Model model) {
         List<Code> codes = codeService.findCodeList();
         AddReview addReview = new AddReview();
-        addReview.setLevel(Level.valueOf("mid"));
+        addReview.setLevel(Level.valueOf("MID"));
 
         model.addAttribute("addReview", addReview);
         model.addAttribute("codes", codes);
