@@ -15,6 +15,6 @@ public class MainService {
     CompanyRepository companyRepository;
 
     public List<Company> CompanyList(String search) {
-        return companyRepository.findCompanyListAll(search, PageRequest.of(0, 15));
+        return companyRepository.findCompanyListAll(search, PageRequest.of(0, 50));
     }
 }
