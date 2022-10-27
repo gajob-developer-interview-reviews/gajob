@@ -3,7 +3,7 @@
 
 .company-form .map { margin: 10px 0; }
 
-.company-form .map img { width: 100%; height: 170px; background-color: var(--color-lightgray); }
+.company-form .map, .company-form .map img { width: 100%; height: 170px; background-color: var(--color-lightgray); }
 
 .company-form .info {
     display: flex;
