@@ -69,3 +69,17 @@ footer { padding-top: 80px; }
 .mg-l-10 { margin-left: 0.625em; }
 .mg-l-20 { margin-left: 1.25em; }
 .mg-l-30 { margin-left: 1.88em; }
+
+/* 스크롤바 커스텀 */
+.scroll-custom::-webkit-scrollbar {
+    width: 5px;  /* 스크롤바의 너비 */
+}
+.scroll-custom::-webkit-scrollbar-thumb {
+    height: 30%; /* 스크롤바의 길이 */
+    background: var(--color-darkgray); /* 스크롤바의 색상 */
+
+    border-radius: 8px;
+}
+.scroll-custom::-webkit-scrollbar-track {
+    background: var(--color-gray);  /*스크롤바 뒷 배경 색상*/
+}

@@ -19,7 +19,7 @@
 .search-form .search-btn a { height: 100%; display: flex; align-items: center; }
 .search-form .search-btn a svg { width: 14px; height: 14px; margin: 0 auto; color: var(--color-white); }
 
-.search-list { display: flex; flex: 0 100%; flex-direction: column; }
+.search-list { display: flex; flex: 0 100%; flex-direction: column; height: 850px; overflow-y: auto; }
 .search-list .info, .search-list .item {
     height: 60px;
 
@@ -49,3 +49,4 @@
 
 /*    html { font-size: 150%; }*/
 /*}*/
+
