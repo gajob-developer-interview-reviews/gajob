@@ -29,58 +29,51 @@
                 <div class="stat font-12">
                     <div class="high">
                         <span>어려워요</span>
-                        <div><div class="bar"></div></div>
+                        <th:block th:each="rt : ${rates}" th:if="${rt.level.name == 'HIGH'}">
+                            <div><div class="bar" th:style="|width:${rt.rate}%;|"></div></div>
+                        </th:block>
                     </div>
                     <div class="mid">
                         <span>보통이에요</span>
-                        <div><div class="bar"></div></div>
+                        <th:block th:each="rt : ${rates}" th:if="${rt.level.name == 'MID'}">
+                            <div><div class="bar" th:style="|width:${rt.rate}%;|"></div></div>
+                        </th:block>
                     </div>
                     <div class="low">
                         <span>쉬워요</span>
-                        <div><div class="bar"></div></div>
+                        <th:block th:each="rt : ${rates}" th:if="${rt.level.name == 'LOW'}">
+                            <div><div class="bar" th:style="|width:${rt.rate}%;|"></div></div>
+                        </th:block>
                     </div>
                 </div>
             </div>
             <div class="experience mg-t-20">
                 <span class="font-16">가장 많이 채용한 방식 TOP3 에요</span>
                 <div class="top3">
-                    <div class="code"><span class="font-12">서류전형</span></div>
-                    <div class="code"><span class="font-12">코딩테스트</span></div>
-                    <div class="code"><span class="font-12">컬처면접</span></div>
+                    <th:block th:each="tp : ${top3}">
+                        <div class="code"><span class="font-12" th:text="${tp}"></span></div>
+                    </th:block>
                 </div>
             </div>
         </div>
         <div class="line-box"></div>
         <div class="reviews mg-t-10">
             <span class="font-16">상세후기</span>
-            <div class="review-box">
-                <div class="date font-14"><span>2022.09.10</span></div>
-                <div class="lvl font-12 mg-t-5"><span>보통이에요</span></div>
-                <div class="font-14">
-                    <div class="review">
-                        <span class="type">서류전형</span>
-                        <div class="text mg-t-5">뭐뭐 준비했더니 무사히 잘 넘어간거가타.</div>
+            <div class="reviews-form scroll-custom mg-t-10 ">
+                <th:block th:each="review : ${reviews}">
+                    <div class="review-box">
+                        <div class="date font-14"><span th:text="${review.writeDt}"></span></div>
+                        <div class="lvl font-12 mg-t-5"><span th:text="${review.level.label}"></span></div>
+                        <div class="font-14">
+                            <th:block th:each="exp : ${review.experience}">
+                                <div class="review">
+                                    <span class="type" th:text="${exp.code.cdName}"></span>
+                                    <div class="text mg-t-5"><span th:text="${exp.content}"></span> </div>
+                                </div>
+                            </th:block>
+                        </div>
                     </div>
-                    <div class="review">
-                        <span class="type">코딩테스트</span>
-                        <div class="text mg-t-5">쉬웠다.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="review-box">
-                <div class="date font-14"><span>2022.09.10</span></div>
-                <div class="lvl font-12 mg-t-5"><span>보통이에요</span></div>
-                <div class="font-14">
-                    <div class="review">
-                        <span class="type">서류전형</span>
-                        <div class="text mg-t-5">뭐뭐 준비했더니 무사히 잘 넘어간거가타.</div>
-                    </div>
-                    <div class="review">
-                        <span class="type">코딩테스트</span>
-                        <div class="text mg-t-5">쉬웠다.</div>
-                    </div>
-                </div>
+                </th:block>
             </div>
         </div>
     </div>

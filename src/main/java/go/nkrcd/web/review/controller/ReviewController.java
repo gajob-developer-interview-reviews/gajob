@@ -8,6 +8,7 @@ import go.nkrcd.web.main.service.CompanyService;
 import go.nkrcd.web.main.service.UserService;
 import go.nkrcd.web.review.model.AddReview;
 import go.nkrcd.web.review.model.Level;
+import go.nkrcd.web.review.repository.ReviewRepository;
 import go.nkrcd.web.review.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/review")
@@ -36,6 +38,9 @@ public class ReviewController {
 
     @Autowired
     CompanyService companyService;
+
+    @Autowired
+    ReviewRepository reviewRepository;
 
     /*
      * 후기 작성하기
@@ -74,6 +79,9 @@ public class ReviewController {
     @RequestMapping(value = "/view", method = {RequestMethod.GET})
     public String view(Model model, @RequestParam(name = "company") String cId) {
         model.addAttribute("company", companyService.findCompanyView(cId));
+        model.addAttribute("rates", reviewService.findLevelRate(cId));
+        model.addAttribute("top3", reviewService.findExperienceTop3(cId));
+        model.addAttribute("reviews", reviewService.findReviews(cId));
 
         return "review/view";
     }

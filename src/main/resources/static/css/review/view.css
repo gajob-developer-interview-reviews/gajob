@@ -20,7 +20,7 @@
     justify-content: flex-start;
 }
 .company-form .level .stat div > span { width: 30%; text-align: right; margin: 0 10px; }
-.company-form .level .stat div > div { width: 70%; padding: 2px; }
+.company-form .level .stat div > div { width: 60%; padding: 2px; }
 .company-form .level .stat .high .bar { width: 50%; background-color: var(--nklcb-orange-02); }
 .company-form .level .stat .mid .bar { width: 40%; background-color: var(--nklcb-orange-01); }
 .company-form .level .stat .low .bar { width: 80%; background-color: var(--nklcb-orange-03); }
@@ -50,6 +50,7 @@
 .line-box { height: 10px; margin: 10px 0; background-color: var(--color-gray); }
 
 .reviews > span { font-weight: 600; }
+.reviews .reviews-form { height: 600px; overflow-y: auto; word-break: break-all; }
 .reviews .review-box {
     display: flex;
     flex-direction: column;
