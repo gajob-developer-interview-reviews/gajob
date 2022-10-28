@@ -19,6 +19,7 @@
 
 .reviews .review-line { width: 100%; height: 1px; margin: 10px 0; background-color: var(--nklcb-logo-color) }
 
+.reviews .review-list { height: 600px; overflow-y: auto; }
 .reviews .review-list .review-box {
     height: 46px;
 
@@ -37,3 +38,8 @@
 .reviews .review-list .review-box .review { display: flex; flex-direction: column; }
 .reviews .review-list .review-box .review .company { margin-bottom: 5px; }
 .reviews .review-list .review-box .review-del a { color: var(--nklcb-logo-color); margin-right: 10px; }
+
+.out { text-align: center; }
+.out a { color: var(--color-darkgray); }
+
+footer { padding-top: 20px; }

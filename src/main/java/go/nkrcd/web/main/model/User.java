@@ -5,10 +5,12 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.util.Assert;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +21,8 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long uId;
+    @Column(name = "u_id")
+    private long uid;
 
     @Column(nullable = false)
     private String oauthId;
@@ -38,7 +41,7 @@ public class User {
     private String joinDt;
 
     private String delYn;
-    private String delDt;
+    private LocalDateTime delDt;
 
     @OneToMany(mappedBy = "user")
     private List<Review> review = new ArrayList<>();

@@ -54,9 +54,16 @@ public class MainController {
     @RequestMapping(value = "/join/ok", method = {RequestMethod.GET})
     public void join(Authentication authentication, HttpServletResponse response) throws IOException {
         User user = userService.join(authentication);
-        if(user.getUId() == NULL) {
+        if(user.getUid() == NULL) {
             response.sendError(500, "회원가입 실패");
         }
         response.sendRedirect("/");
+    }
+
+    @RequestMapping(value = "/out", method = {RequestMethod.GET})
+    public void out(Authentication authentication, HttpServletResponse response) throws IOException {
+        int out = userService.out(authentication);
+        System.out.println(out);
+        response.sendRedirect("/logout");
     }
 }
