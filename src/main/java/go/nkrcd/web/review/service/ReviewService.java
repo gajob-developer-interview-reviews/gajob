@@ -115,4 +115,13 @@ public class ReviewService {
 
         return top3;
     }
+
+    /**
+     * 사용자가 쓴 리뷰 목록
+     * @param uId
+     * @return
+     */
+    public List<Review> findReviewByUser(Long uId) {
+        return reviewRepository.findReviewByUser(uId);
+    }
 }

@@ -28,4 +28,7 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
 
     @Query("select r.rid from Review r where r.company.cId like %:cId% and r.delYn = 'N'")
     List<Long> findRIds(@Param("cId") String cId);
+
+    @Query("select r from Review r where r.user.uid = :uid and r.delYn ='N' order by r.rid desc ")
+    List<Review> findReviewByUser(@Param("uid") Long uId);
 }

@@ -29,41 +29,17 @@
             <div class="review-line"></div>
 
             <div class="review-list scroll-custom">
-                <div class="review-box">
-                    <div class="review">
-                        <div class="company font-14">인하공업전문주식회사</div>
-                        <div class="write-date font-12">2022.09.10</div>
+                <th:block th:each="review : ${reviews}" >
+                    <div class="review-box">
+                        <div class="review">
+                            <div class="company font-14"><a th:href="@{review/view(company=${review.company.getCId()})}"><span th:text="${review.company.name}"></span></a></div>
+                            <div class="write-date font-12"><span th:text="${review.writeDt}" /></div>
+                        </div>
+                            <div class="review-del font-12"><a th:href="@{/mypage}">삭제</a></div>
+<!--                        <div class="review-del font-12"><a th:href="@{review/del(id=${review.rid})}">삭제</a></div>-->
+<!--                        <div class="review-del font-12"><a th:href="|javascript:del(${review.rid})|">삭제</a></div>-->
                     </div>
-                    <div class="review-del font-12"><a th:href="@{/mypage}">삭제</a></div>
-                </div>
-                <div class="review-box">
-                    <div class="review">
-                        <div class="company font-14">인하공업전문주식회사</div>
-                        <div class="write-date font-12">2022.09.10</div>
-                    </div>
-                    <div class="review-del font-12"><a th:href="@{/mypage}">삭제</a></div>
-                </div>
-                <div class="review-box">
-                    <div class="review">
-                        <div class="company font-14">인하공업전문주식회사</div>
-                        <div class="write-date font-12">2022.09.10</div>
-                    </div>
-                    <div class="review-del font-12"><a th:href="@{/mypage}">삭제</a></div>
-                </div>
-                <div class="review-box">
-                    <div class="review">
-                        <div class="company font-14">인하공업전문주식회사</div>
-                        <div class="write-date font-12">2022.09.10</div>
-                    </div>
-                    <div class="review-del font-12"><a th:href="@{/mypage}">삭제</a></div>
-                </div>
-                <div class="review-box">
-                    <div class="review">
-                        <div class="company font-14">인하공업전문주식회사</div>
-                        <div class="write-date font-12">2022.09.10</div>
-                    </div>
-                    <div class="review-del font-12"><a th:href="@{/mypage}">삭제</a></div>
-                </div>
+                </th:block>
             </div>
         </div>
 

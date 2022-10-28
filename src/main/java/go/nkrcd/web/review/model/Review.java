@@ -11,6 +11,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +42,7 @@ public class Review {
     private Level level;
 
     private String delYn;
-    private String delDt;
+    private LocalDateTime delDt;
 
     @OneToMany(mappedBy = "review")
     private List<Experience> experience = new ArrayList<>();
