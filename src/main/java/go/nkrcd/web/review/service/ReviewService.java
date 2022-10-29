@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -123,5 +124,21 @@ public class ReviewService {
      */
     public List<Review> findReviewByUser(Long uId) {
         return reviewRepository.findReviewByUser(uId);
+    }
+
+    /**
+     * 후기 삭제
+     * @param rid
+     * @return
+     */
+    @Transactional
+    public int del(String rid) {
+        try {
+            int del = reviewRepository.del(Long.parseLong(rid), LocalDateTime.now());
+            return del;
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            return -1;
+        }
     }
 }

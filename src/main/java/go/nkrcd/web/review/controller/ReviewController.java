@@ -86,4 +86,18 @@ public class ReviewController {
         return "review/view";
     }
 
+    /**
+     * 후기 삭제
+     * @param rid
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "", method = {RequestMethod.PUT})
+    public ResponseEntity del(String rid) {
+        if(reviewService.del(rid) > -1) {
+            return new ResponseEntity(RestEntity.res(HttpStatus.OK, "후기가 삭제되었습니다.", null), HttpStatus.OK);
+        } else {
+            return new ResponseEntity(RestEntity.res(HttpStatus.INTERNAL_SERVER_ERROR, "후기가 삭제 실패하였습니다.", null), HttpStatus.OK);
+        }
+    }
 }
