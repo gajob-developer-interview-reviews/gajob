@@ -42,7 +42,7 @@
         </div>
 
         <div class="out font-10 mg-t-10">
-            <a th:href="@{/out}">탈퇴하기</a>
+            <a href="javascript:out();">탈퇴하기</a>
        </div>
     </div>
 </main>
@@ -63,6 +63,13 @@
             if (result.code == 'OK')
                 location.href = "/mypage";
         });
+    }
+
+    // 탈퇴
+    function out() {
+        if(confirm("정말로 탈퇴하시겠습니까?")) {
+            location.href = "/out";
+        }
     }
 </script>
 </body>

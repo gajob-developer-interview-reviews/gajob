@@ -63,7 +63,8 @@ public class MainController {
     @RequestMapping(value = "/out", method = {RequestMethod.GET})
     public void out(Authentication authentication, HttpServletResponse response) throws IOException {
         int out = userService.out(authentication);
-        System.out.println(out);
+        if(out < 1)
+            response.sendError(500, "회원탈퇴 실패");
         response.sendRedirect("/logout");
     }
 }
