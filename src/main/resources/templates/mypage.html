@@ -53,16 +53,18 @@
 
     // 후기 삭제
     function del(rid) {
-        $.ajax({
-            url: "review",
-            data: {rid: rid},
-            type: "PUT",
-        }).done(function (result) {
-            alert(result.msg);
+        if(confirm("후기를 삭제하시겠습니까?")) {
+            $.ajax({
+                url: "review",
+                data: {rid: rid},
+                type: "PUT",
+            }).done(function (result) {
+                alert(result.msg);
 
-            if (result.code == 'OK')
-                location.href = "/mypage";
-        });
+                if (result.code == 'OK')
+                    location.href = "/mypage";
+            });
+        }
     }
 
     // 탈퇴
