@@ -57,3 +57,10 @@ REST API 응답 형식 추가 <br/>
 회사 지도 대체 이미지 추가 <br/>
 > abstract-architecture-blue-entrance-perspective-financial.jpg <br/> 
 > 작가 4045 출처 Freepik
+
+---
+**2022.10.30** <br/>
+favicon 추가 <br/>
+> favicon.ico <br/>
+> 생성 link : https://favicon.io/ <br/><br/>
+> ![favicon-32x32](https://user-images.githubusercontent.com/80824750/198868678-89397e81-4605-43a4-a405-3e6dad8651e7.png)
