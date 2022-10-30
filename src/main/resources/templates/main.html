@@ -9,6 +9,7 @@
 <header th:replace="~{common/header :: header}"></header>
 <main>
     <div class="container">
+        <div class="explain">서류전형, 코딩테스트 ... 채용 후기를 한눈에!</div>
         <div class="search-form font mg-t-40">
             <form th:action="@{/}" th:method="get">
                 <div class="search-box">
@@ -20,13 +21,13 @@
             </div>
         </div>
         <div class="search-list scroll-custom font mg-t-20">
-            <div class="info">
-                <div class="font-16">가잡</div>
-                <div class="font-12">
-                    개발자 채용 후기를 확인해보세요 <br/>
-                    * 가잡에 대한 소개를 간단히 적을 예정
-                </div>
-            </div>
+<!--            <div class="info">-->
+<!--                <div class="font-16">가잡</div>-->
+<!--                <div class="font-12">-->
+<!--                    개발자 채용 후기를 확인해보세요 <br/>-->
+<!--                    * 가잡에 대한 소개를 간단히 적을 예정-->
+<!--                </div>-->
+<!--            </div>-->
 
             <th:bock th:each="company : ${companies}">
                 <div class="item">
