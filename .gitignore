@@ -38,3 +38,7 @@ out/
 
 ### properties ###
 **/resources/application-auth.properties
+
+### logs ###
+logs/
+!**/src/main/**/logs/
