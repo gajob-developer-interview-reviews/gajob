@@ -64,3 +64,18 @@ favicon 추가 <br/>
 > favicon.ico <br/>
 > 생성 link : https://favicon.io/ <br/><br/>
 > ![favicon-32x32](https://user-images.githubusercontent.com/80824750/198868678-89397e81-4605-43a4-a405-3e6dad8651e7.png)
+
+---
+**2022.11.07** <br/>
+이미지 캐시 설정 <br/>
+> WebMvcConfig.java <br/>
+> 참고 : https://tbread-development.tistory.com/25
+<br/>
+
+브라우저 성능 검사 <br/>
+> [Google PageSpeed Insights](https://pagespeed.web.dev/?hl=ko) <br/><br/>
+> 휴대전화 <br/>
+> ![결과_휴대전화](https://user-images.githubusercontent.com/80824750/200248603-b1c731e3-c160-4726-8f1a-f7b3c32558e0.png)
+> 
+> 데스크톱 <br/>
+> ![결과_데스크톱](https://user-images.githubusercontent.com/80824750/200248864-58a19152-db78-4a4e-8ece-f27962281303.png)
