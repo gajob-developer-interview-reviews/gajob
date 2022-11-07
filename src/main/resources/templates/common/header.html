@@ -6,9 +6,9 @@
             <div class="logo font font-26"><a th:href="@{/}">가잡</a></div>
             <div class="menu font-14">
 <!--                <a href="#" th:href="@{/mypage}"><i data-feather="menu"></i></a>-->
-                <li sec:authorize="isAuthenticated()"><a th:href="@{/review}">후기작성</a></li>
-                <li sec:authorize="isAuthenticated()"><a th:href="@{/mypage}">내정보</a></li>
-                <li sec:authorize="!isAuthenticated()"><a th:href="@{/login}">로그인</a></li>
+                <th:block sec:authorize="isAuthenticated()"><a th:href="@{/review}">후기작성</a></th:block>
+                <th:block sec:authorize="isAuthenticated()"><a th:href="@{/mypage}">내정보</a></th:block>
+                <th:block sec:authorize="!isAuthenticated()"><a th:href="@{/login}">로그인</a></th:block>
             </div>
         </div>
     </div>
