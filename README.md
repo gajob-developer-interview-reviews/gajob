@@ -79,3 +79,14 @@ favicon 추가 <br/>
 > 
 > 데스크톱 <br/>
 > ![결과_데스크톱](https://user-images.githubusercontent.com/80824750/200248864-58a19152-db78-4a4e-8ece-f27962281303.png)
+
+---
+**2022.11.09** <br/>
+robots.txt 및 meta-data 설정 <br/>
+
+> **검색엔진 최적화 점수 증가** <br/><br/>
+> 휴대전화 : 75 -> 83 <br/>
+> ![검색엔진_휴대전화](https://user-images.githubusercontent.com/80824750/200773215-1ade1fe4-3927-4584-82ad-b72c92eee858.png)
+> 
+> 데스크톱 : 70 -> 80 <br/>
+> ![검색엔진_데스크톱](https://user-images.githubusercontent.com/80824750/200773304-a78730d8-2949-4f05-9bac-19b55377f243.png)
