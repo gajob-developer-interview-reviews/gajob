@@ -11,7 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
@@ -66,5 +68,11 @@ public class MainController {
         if(out < 1)
             response.sendError(500, "회원탈퇴 실패");
         response.sendRedirect("/logout");
+    }
+
+    @RequestMapping(value = "/robots.txt")
+    @ResponseBody
+    public void robotsBlock(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.getWriter().write("User-agent: *\nDisallow: /\n");
     }
 }
