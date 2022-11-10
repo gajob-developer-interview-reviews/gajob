@@ -22,4 +22,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
             "where u.u_id = :uid " +
             "and u.del_yn = 'N'", nativeQuery = true)
     int joinOut(@Param("uid") Long uid, @Param("delDt") LocalDateTime delDt);
+
+    @Query("select u from User u where u.oauthId = :oauthId and u.delYn = 'N'")
+    User findProfile(@Param("oauthId")String oauthId);
 }

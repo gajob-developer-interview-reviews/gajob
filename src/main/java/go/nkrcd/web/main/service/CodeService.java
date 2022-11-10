@@ -10,10 +10,18 @@ import java.util.List;
 @Service
 public class CodeService {
 
-    @Autowired
-    CodeRepository codeRepository;
+    private final CodeRepository codeRepository;
+
+    @Autowired 
+    public CodeService(CodeRepository codeRepository) {
+        this.codeRepository = codeRepository;
+    }
 
     public List<Code> findCodeList() {
         return codeRepository.findCodeList();
+    }
+
+    public Code findByCId(String cdId) {
+        return codeRepository.findByCId(cdId);
     }
 }

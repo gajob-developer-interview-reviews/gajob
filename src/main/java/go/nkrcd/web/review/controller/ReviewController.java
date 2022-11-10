@@ -26,20 +26,18 @@ import java.util.List;
 @Controller
 @RequestMapping("/review")
 public class ReviewController {
-    @Autowired
-    CodeService codeService;
+    private final CodeService codeService;
+    private final UserService userService;
+    private final ReviewService reviewService;
+    private final CompanyService companyService;
 
     @Autowired
-    UserService userService;
-
-    @Autowired
-    ReviewService reviewService;
-
-    @Autowired
-    CompanyService companyService;
-
-    @Autowired
-    ReviewRepository reviewRepository;
+    public ReviewController(CodeService codeService, UserService userService, ReviewService reviewService, CompanyService companyService) {
+        this.codeService = codeService;
+        this.userService = userService;
+        this.reviewService = reviewService;
+        this.companyService = companyService;
+    }
 
     /*
      * 후기 작성하기

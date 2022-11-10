@@ -13,9 +13,12 @@ import java.util.Optional;
 
 @Service
 public class UserService {
+    private final UserRepository userRepository;
 
     @Autowired
-    UserRepository userRepository;
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     public User findByOauthIdAndDelYn(String oauthId) {
         Optional<User> user = userRepository.findByOauthIdAndDelYn(oauthId, "N");
@@ -32,5 +35,13 @@ public class UserService {
     public int out(Authentication authentication) {
         CustomOAuthUser oAuthUser = (CustomOAuthUser) authentication.getPrincipal();
         return userRepository.joinOut(oAuthUser.getUser().getUid(), LocalDateTime.now());
+    }
+
+    public User findProfile(String oauthId) {
+        return userRepository.findProfile(oauthId);
+    }
+
+    public User save(User user) {
+        return userRepository.save(user);
     }
 }

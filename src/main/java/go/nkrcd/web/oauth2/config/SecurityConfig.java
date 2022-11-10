@@ -15,14 +15,24 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-    @Autowired
-    OAuthService oAuthService;
+    private final OAuthService oAuthService;
+    private final CustomOAuthSuccessHandler customOAuthSuccessHandler;
+    private final CustomAccessDeniedHandler customAccessDeniedHandler;
 
     @Autowired
-    CustomOAuthSuccessHandler customOAuthSuccessHandler;
-
-    @Autowired
-    CustomAccessDeniedHandler customAccessDeniedHandler;
+    public SecurityConfig(OAuthService oAuthService, CustomOAuthSuccessHandler customOAuthSuccessHandler, CustomAccessDeniedHandler customAccessDeniedHandler) {
+        this.oAuthService = oAuthService;
+        this.customOAuthSuccessHandler = customOAuthSuccessHandler;
+        this.customAccessDeniedHandler = customAccessDeniedHandler;
+    }
+//    @Autowired
+//    OAuthService oAuthService;
+//
+//    @Autowired
+//    CustomOAuthSuccessHandler customOAuthSuccessHandler;
+//
+//    @Autowired
+//    CustomAccessDeniedHandler customAccessDeniedHandler;
 
     @Bean
     public static PasswordEncoder passwordEncoder() {
