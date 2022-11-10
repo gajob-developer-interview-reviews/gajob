@@ -1,6 +1,7 @@
 package go.nkrcd.web.main.controller;
 
 import go.nkrcd.web.main.model.Company;
+import go.nkrcd.web.main.model.CompanyDto;
 import go.nkrcd.web.main.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +21,7 @@ public class SearchController {
      * 회사명 자동완성
      */
     @RequestMapping(value = "/company", method = {RequestMethod.POST})
-    public List<Company> searchCompany(String search) {
+    public List<CompanyDto> searchCompany(String search) {
         return searchService.searchCompany(search);
     }
 }

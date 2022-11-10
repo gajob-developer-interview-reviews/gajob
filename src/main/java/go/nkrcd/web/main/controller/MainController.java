@@ -1,6 +1,7 @@
 package go.nkrcd.web.main.controller;
 
 import go.nkrcd.web.main.model.Company;
+import go.nkrcd.web.main.model.CompanyDto;
 import go.nkrcd.web.main.model.User;
 import go.nkrcd.web.main.service.MainService;
 import go.nkrcd.web.main.service.UserService;
@@ -34,7 +35,7 @@ public class MainController {
 
     @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.POST})
     public String main(Model model, @RequestParam(value = "search", defaultValue = "") String search) {
-        List<Company> companies = mainService.CompanyList(search);
+        List<CompanyDto> companies = mainService.CompanyList(search);
         model.addAttribute("search", search);
         model.addAttribute("companies", companies);
         return "main";

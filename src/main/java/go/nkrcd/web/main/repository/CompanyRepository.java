@@ -12,8 +12,8 @@ import java.util.List;
 
 @Repository
 public interface CompanyRepository extends JpaRepository<Company, Long> {
-    @Query(value = "select CONCAT('CP',LPAD(REPLACE(max(c_id),'CP','')+1, '3', '0')) from company c", nativeQuery = true)
-    String findCIdNext();
+//    @Query(value = "select CONCAT('CP',LPAD(REPLACE(max(c_id),'CP','')+1, '3', '0')) from company c", nativeQuery = true)
+//    String findCIdNext();
 
     @Query("select c from Company c where c.name like %:search% and c.delYn = 'N'")
     List<Company> findCompanyList(@Param("search") String search, Pageable pageable);
@@ -21,9 +21,9 @@ public interface CompanyRepository extends JpaRepository<Company, Long> {
     @Query("select c from Company c where c.cId = :cId")
     Company findByCid(@Param("cId") String cId);
 
-    @Query("select new go.nkrcd.web.main.model.Company(c.cId, c.name, c.address) from Company c where c.name like %:search% and c.delYn = 'N'")
+    @Query("select c from Company c where c.name like %:search% and c.delYn = 'N'")
     List<Company> findCompanyListAll(@Param("search") String search, Pageable pageable);
 
-    @Query("select new go.nkrcd.web.main.model.Company(c.cId, c.name, c.address) from Company c where c.cId = :cId and c.delYn = 'N'")
+    @Query("select c from Company c where c.cId = :cId and c.delYn = 'N'")
     Company findCompanyView(@Param("cId") String cid);
 }
