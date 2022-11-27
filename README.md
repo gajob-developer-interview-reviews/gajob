@@ -72,7 +72,7 @@
 	<tr><td>Open API</td><td>Kakao Map API</td></tr>
 	<tr><th rowspan="6">Back-end</th><td>Language</td><td>Java 11</td></tr>
 	<tr><td>Framework</td><td>Spring Boot 2.7.3</td></tr>
-	<tr><td>ORM</td><td>Spring Data JPA, Querydsl</td></tr>
+	<tr><td>ORM</td><td>Spring Data JPA, JPQL</td></tr>
 	<tr><td>Authorization</td><td>Spring Security, OAuth2.0</td></tr>
 	<tr><td>Database</td><td>MySQL</td></tr>
 	<tr><td>Open API</td><td>Google Login API</td></tr>
@@ -84,8 +84,6 @@
 ---
 
 ### Contact
-
-오류 사항, 회사 추가 등 문의사항이 있으면 아래의 메일로 연락주세요.
 
 <table>
   <tr>
