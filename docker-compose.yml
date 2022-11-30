@@ -1,0 +1,9 @@
+version : "3"
+
+services:
+  spring-app:
+    container_name: spring-app
+    build: .
+    restart: always
+    ports:
+      - 80:80
